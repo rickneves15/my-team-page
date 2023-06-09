@@ -1,7 +1,25 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inconsolata, Montserrat, PT_Serif, Poppins } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-poppins',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['500', '700'],
+  variable: '--font-montserrat',
+})
+
+const ptSerif = PT_Serif({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-pt-serif',
+})
+
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${poppins.variable} ${montserrat.variable} ${ptSerif.variable} font-sans text-black`}>{children}</body>
     </html>
   )
 }
